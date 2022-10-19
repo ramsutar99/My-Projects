@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .timea {
+            height: auto;
+            width: auto;
+            font-size: 25px;
+            text-align: center;
+            color: aliceblue;
+            /* border: 5px solid red; */
+            margin: 0 auto;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="timea">
+        <h1 id="date"></h1>
+        <h1 id="time"></h1>
+    </div>
+</body>
+<script>
+    //getting date in dd/mm/yyyy 
+    var d = new Date();
+    var dd = d.getDate();
+    var mm = d.getMonth()+1;
+    var yyyy = d.getFullYear();
+
+    if(dd<10)dd='0'+dd;
+    if(mm<10)mm='0'+mm;
+
+    var date = dd+'/'+mm+'/'+yyyy;
+    console.log(date);
+
+    //getting time and date
+
+    let time = new Date().toLocaleTimeString()
+    
+    //getting elements
+    let dateSpan = document.getElementById('date');
+    dateSpan.innerHTML = date;
+    
+    let timeSpan = document.getElementById('time');
+    timeSpan.innerHTML = time;
+
+
+</script>
+</html>
